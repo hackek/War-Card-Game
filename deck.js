@@ -1,4 +1,5 @@
 const SUITS = ["♠", "♣", "♥", "♦"]
+const SUITLETTERS = {"♠": "S", "♣": "C", "♥": "H", "♦": "D"}
 const VALUES = [
   "A",
   "2",
@@ -40,6 +41,13 @@ export default class Deck {
       this.cards[i] = oldValue
     }
   }
+
+  viewContents() {
+    let deckContents = ((this.cards).map(card => card.virtualConversion())).join(",");
+    console.log(deckContents);
+    // console.log((this.cards).map(card => card.value+SUITLETTERS[card.suit]));
+    return deckContents;
+  }
 }
 
 class Card {
@@ -58,6 +66,10 @@ class Card {
     cardDiv.classList.add("card", this.color)
     cardDiv.dataset.value = `${this.value} ${this.suit}`
     return cardDiv
+  }
+
+  virtualConversion() {
+    return this.value == "10" ? "0"+SUITLETTERS[this.suit] : this.value+SUITLETTERS[this.suit];
   }
 }
 

@@ -1,16 +1,19 @@
-*, *::after, *::before { 
+*, *::after, *::before {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
   display: grid;
-  grid-template-columns: repeat(2, 4rem);
-  grid-template-rows: 7rem 2rem 7rem;
+  grid-template-columns: repeat(2, 8rem);
+  grid-template-rows: 14rem 4rem 14rem;
   gap: .5rem;
   cursor: pointer;
   justify-content: center;
   padding-top: 1rem;
+  background-image: url("https://media.istockphoto.com/id/672556284/photo/green-felt-and-playing-chips-abstract-background.jpg?s=170667a&w=0&k=20&c=Y4f0p8yFweAmoufgP2vhRlLjDueW7YcHb4DEOijvO2U=");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .deck {
@@ -39,6 +42,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-weight: 900;
+  color: white;
 }
 
 .card {
@@ -55,10 +60,12 @@ body {
 
 .card.red {
   color: red;
+  background-color: white;
 }
 
 .card.black {
   color: black;
+  background-color: white;
 }
 
 .card::before,
